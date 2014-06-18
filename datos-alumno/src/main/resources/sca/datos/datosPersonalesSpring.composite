@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite 
+	xmlns="http://www.osoa.org/xmlns/sca/1.0" 
+	xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0" 
+	name="DatosPersonalesComposite" 
+	targetNamespace="http://guarani/sca/datosPersonales">
+	
+  <service name="DatosPersonalesService" promote="DatosPersonalesServiceComponent">
+	<interface.java interface="service.api.DatosPersonalesService"/>
+	<binding.ws uri="http://localhost:8082/services/DatosPersonalesService"/>
+  </service>
+  
+  <component name="DatosPersonalesServiceComponent">
+  	<implementation.spring location="spring/DatosPersonalesService.xml" />
+  </component>
+  
+  <component name="DatosPrincipalesServiceComponent">
+  	<implementation.spring location="spring/DatosPrincipalesService.xml" />
+  </component>
+  
+  <component name="DatosFamiliaresServiceComponent">
+  	<implementation.spring location="spring/DatosFamiliaresService.xml" />
+  </component>
+  
+  <component name="DatosExtranjerosServiceComponent">
+    <implementation.spring location="spring/DatosExtranjerosService.xml" />
+  </component>
+  
+  <component name="DatosSocioEconomicosServiceComponent">
+  	<implementation.spring location="spring/DatosSocioEconomicosService.xml" />
+  </component>
+  
+  <component name="DatosFormacionServiceComponent">
+    <implementation.spring location="spring/DatosFormacionService.xml" />
+  </component>
+  
+  <component name="DatosCondicionAcademicaServiceComponent">
+    <implementation.spring location="spring/DatosCondicionAcademicaService.xml" />
+  </component>
+  
+  <wire source="DatosPersonalesServiceComponent/datosPrincipalesService" target="DatosPrincipalesServiceComponent/DatosPrincipalesService"/>
+  <wire source="DatosPersonalesServiceComponent/datosFamiliaresService" target="DatosFamiliaresServiceComponent/DatosFamiliaresService"/>
+  <wire source="DatosPersonalesServiceComponent/datosExtranjerosService" target="DatosExtranjerosServiceComponent/DatosExtranjerosService"/>
+  <wire source="DatosPersonalesServiceComponent/datosSocioEconomicosService" target="DatosSocioEconomicosServiceComponent/DatosSocioEconomicosService"/>
+  <wire source="DatosPersonalesServiceComponent/datosFormacionService" target="DatosFormacionServiceComponent/DatosFormacionService"/>
+  <wire source="DatosPersonalesServiceComponent/datosCondicionAcademicaService" target="DatosCondicionAcademicaServiceComponent/DatosCondicionAcademicaService"/>
+</composite>

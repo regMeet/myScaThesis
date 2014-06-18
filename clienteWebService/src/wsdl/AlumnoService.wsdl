@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AlumnoServiceService" targetNamespace="http://api.service/" xmlns:tns="http://api.service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP11="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://api.service/" xmlns:tns="http://api.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="getDatosFormacionSuperiorResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosFormacionSuperior"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFamiliares"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosPersonales"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFormacionSuperior"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicos"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosExtranjeros"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosPersonalesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosPersonales"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosSocioEconomicos"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosCondicionAcademica"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosDomicilioResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosDomicilio"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosGenerales"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSituacionLaboralPadresResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosSocioEconomicosSituacionLaboralPadres"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFamiliaresResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosFamiliares"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosPrincipalesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosPrincipales"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosGeneralesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosSocioEconomicosGenerales"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSituacionLaboralPersonalResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosSocioEconomicosSituacionLaboralPersonal"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFormacion"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSituacionLaboralPadres"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFormacionResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosFormacion"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosCondicionAcademicaResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosCondicionAcademica"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFormacionSecundaria"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosExtranjerosResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosExtranjeros"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosFormacionSecundariaResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosFormacionSecundaria"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSaludResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="return" nillable="true" type="tns:datosSocioEconomicosSalud"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosDomicilio"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSituacionLaboralPersonal"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosSocioEconomicosSalud"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="getDatosPrincipales"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="dniAlumno" nillable="true" type="xs:string"/></xs:sequence></xs:complexType></xs:element>
+<xs:complexType name="datosSocioEconomicosSalud"><xs:sequence><xs:element minOccurs="0" name="coberturaDeSalud" type="xs:string"/><xs:element maxOccurs="unbounded" minOccurs="0" name="deportes" nillable="true" type="xs:string"/><xs:element maxOccurs="unbounded" minOccurs="0" name="lugaresPractica" nillable="true" type="xs:string"/><xs:element name="practicaDeporte" type="xs:boolean"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosSocioEconomicos"><xs:sequence><xs:element minOccurs="0" name="datosSocioEconomicosGenerales" type="tns:datosSocioEconomicosGenerales"/><xs:element minOccurs="0" name="datosSocioEconomicosSalud" type="tns:datosSocioEconomicosSalud"/><xs:element minOccurs="0" name="datosSocioEconomicosSituacionLaboralPadres" type="tns:datosSocioEconomicosSituacionLaboralPadres"/><xs:element minOccurs="0" name="datosSocioEconomicosSituacionLaboralPersonal" type="tns:datosSocioEconomicosSituacionLaboralPersonal"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosSocioEconomicosGenerales"><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="accesoInternet" nillable="true" type="xs:string"/><xs:element maxOccurs="unbounded" minOccurs="0" name="disponibilidadPC" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="regularidadAccesoInternet" type="xs:string"/><xs:element maxOccurs="unbounded" minOccurs="0" name="usoInternet" nillable="true" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosSocioEconomicosSituacionLaboralPadres"><xs:sequence><xs:element minOccurs="0" name="datosDeTrabajoMadre" type="tns:datosLaborales"/><xs:element minOccurs="0" name="datosDeTrabajoPadre" type="tns:datosLaborales"/><xs:element minOccurs="0" name="nivelDeEstudiosMadre" type="xs:string"/><xs:element minOccurs="0" name="nivelDeEstudiosPadre" type="xs:string"/><xs:element name="viveElPadre" type="xs:boolean"/><xs:element name="viveLaMadre" type="xs:boolean"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosLaborales"><xs:sequence><xs:element minOccurs="0" name="actividadEconomica" type="xs:string"/><xs:element minOccurs="0" name="categoriaOcupacional" type="xs:string"/><xs:element minOccurs="0" name="detalleRamaActividadEconomica" type="xs:string"/><xs:element minOccurs="0" name="situacionLaboral" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosSocioEconomicosSituacionLaboralPersonal"><xs:sequence><xs:element minOccurs="0" name="datosDeTrabajo" type="tns:datosLaborales"/><xs:element minOccurs="0" name="descuentoJubilatorios" type="xs:string"/><xs:element minOccurs="0" name="empresaFamiliar" type="xs:string"/><xs:element minOccurs="0" name="horasSemanales" type="xs:string"/><xs:element minOccurs="0" name="remuneracion" type="xs:string"/><xs:element minOccurs="0" name="tareaQueRealiza" type="xs:string"/><xs:element minOccurs="0" name="trabajoQueHaceElAlumno" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosExtranjeros"><xs:sequence><xs:element minOccurs="0" name="fechaDeOtorgamientoDeLaResidencia" type="xs:string"/><xs:element minOccurs="0" name="fechaDeVencimientoDeLaResidencia" type="xs:string"/><xs:element minOccurs="0" name="fechaIngresoAlPais" type="xs:string"/><xs:element minOccurs="0" name="fechaOtorgamientoVisa" type="xs:string"/><xs:element minOccurs="0" name="fechaVencimientoVisa" type="xs:string"/><xs:element minOccurs="0" name="tipoDeResidencia" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosFormacion"><xs:sequence><xs:element minOccurs="0" name="datosFormacionSecundaria" type="tns:datosFormacionSecundaria"/><xs:element minOccurs="0" name="datosFormacionSuperior" type="tns:datosFormacionSuperior"/><xs:element maxOccurs="unbounded" minOccurs="0" name="idiomas" nillable="true" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosFormacionSecundaria"><xs:sequence><xs:element minOccurs="0" name="anioEgresoSecundario" type="xs:string"/><xs:element minOccurs="0" name="codigoColegioSecundario" type="xs:string"/><xs:element minOccurs="0" name="codigoTituloSecundario" type="xs:string"/><xs:element minOccurs="0" name="nombreColegioSecundario" type="xs:string"/><xs:element minOccurs="0" name="nombreTituloSecundario" type="xs:string"/><xs:element minOccurs="0" name="orientacionVocacionalRecibida" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosFormacionSuperior"><xs:sequence><xs:element minOccurs="0" name="anioEgreso" type="xs:string"/><xs:element minOccurs="0" name="area" type="xs:string"/><xs:element minOccurs="0" name="carrera" type="xs:string"/><xs:element minOccurs="0" name="establecimiento" type="xs:string"/><xs:element minOccurs="0" name="nivel" type="xs:string"/><xs:element minOccurs="0" name="tipo" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosFamiliares"><xs:sequence><xs:element minOccurs="0" name="cantidadDeHijos" type="xs:string"/><xs:element minOccurs="0" name="cantidadDeHijosACargo" type="xs:string"/><xs:element minOccurs="0" name="conQuienVive" type="xs:string"/><xs:element minOccurs="0" name="estadoCivil" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosCondicionAcademica"><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="carreras" nillable="true" type="tns:carrera"/></xs:sequence></xs:complexType>
+<xs:complexType name="carrera"><xs:sequence><xs:element minOccurs="0" name="activo" type="xs:string"/><xs:element minOccurs="0" name="codigoCarrera" type="xs:string"/><xs:element minOccurs="0" name="egresado" type="xs:string"/><xs:element minOccurs="0" name="fechaUltimoExamen" type="xs:string"/><xs:element minOccurs="0" name="nombreCarrera" type="xs:string"/><xs:element name="ultimaReincripcion" type="xs:int"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosPersonales"><xs:sequence><xs:element minOccurs="0" name="datosCondicionAcademica" type="tns:datosCondicionAcademica"/><xs:element minOccurs="0" name="datosDomicilio" type="tns:datosDomicilio"/><xs:element minOccurs="0" name="datosExtranjeros" type="tns:datosExtranjeros"/><xs:element minOccurs="0" name="datosFamiliares" type="tns:datosFamiliares"/><xs:element minOccurs="0" name="datosFormacion" type="tns:datosFormacion"/><xs:element minOccurs="0" name="datosPrincipales" type="tns:datosPrincipales"/><xs:element minOccurs="0" name="datosSocioEconomicos" type="tns:datosSocioEconomicos"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosDomicilio"><xs:sequence><xs:element minOccurs="0" name="calle" type="xs:string"/><xs:element name="codigoPostal" type="xs:int"/><xs:element minOccurs="0" name="departamento" type="xs:string"/><xs:element minOccurs="0" name="edificio" type="xs:string"/><xs:element minOccurs="0" name="localidad" type="xs:string"/><xs:element minOccurs="0" name="numero" type="xs:string"/><xs:element minOccurs="0" name="piso" type="xs:string"/></xs:sequence></xs:complexType>
+<xs:complexType name="datosPrincipales"><xs:sequence><xs:element minOccurs="0" name="apellido" type="xs:string"/><xs:element minOccurs="0" name="cuil" type="xs:string"/><xs:element minOccurs="0" name="dni" type="xs:string"/><xs:element minOccurs="0" name="email" type="xs:string"/><xs:element minOccurs="0" name="fechaDeNacimiento" type="xs:string"/><xs:element minOccurs="0" name="genero" type="xs:string"/><xs:element minOccurs="0" name="nacionalidad" type="xs:string"/><xs:element minOccurs="0" name="nombre" type="xs:string"/><xs:element minOccurs="0" name="telefonoFijo" type="xs:string"/><xs:element minOccurs="0" name="telefonoMovil" type="xs:string"/></xs:sequence></xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getDatosFormacionSuperiorResponse">
+    <wsdl:part name="getDatosFormacionSuperiorResponse" element="tns:getDatosFormacionSuperiorResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFamiliares">
+    <wsdl:part name="getDatosFamiliares" element="tns:getDatosFamiliares">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosPersonales">
+    <wsdl:part name="getDatosPersonales" element="tns:getDatosPersonales">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFormacionSuperior">
+    <wsdl:part name="getDatosFormacionSuperior" element="tns:getDatosFormacionSuperior">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicos">
+    <wsdl:part name="getDatosSocioEconomicos" element="tns:getDatosSocioEconomicos">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosExtranjeros">
+    <wsdl:part name="getDatosExtranjeros" element="tns:getDatosExtranjeros">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosPersonalesResponse">
+    <wsdl:part name="getDatosPersonalesResponse" element="tns:getDatosPersonalesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosResponse">
+    <wsdl:part name="getDatosSocioEconomicosResponse" element="tns:getDatosSocioEconomicosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosCondicionAcademica">
+    <wsdl:part name="getDatosCondicionAcademica" element="tns:getDatosCondicionAcademica">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosDomicilioResponse">
+    <wsdl:part name="getDatosDomicilioResponse" element="tns:getDatosDomicilioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosGenerales">
+    <wsdl:part name="getDatosSocioEconomicosGenerales" element="tns:getDatosSocioEconomicosGenerales">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSituacionLaboralPadresResponse">
+    <wsdl:part name="getDatosSocioEconomicosSituacionLaboralPadresResponse" element="tns:getDatosSocioEconomicosSituacionLaboralPadresResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFamiliaresResponse">
+    <wsdl:part name="getDatosFamiliaresResponse" element="tns:getDatosFamiliaresResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosPrincipalesResponse">
+    <wsdl:part name="getDatosPrincipalesResponse" element="tns:getDatosPrincipalesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosGeneralesResponse">
+    <wsdl:part name="getDatosSocioEconomicosGeneralesResponse" element="tns:getDatosSocioEconomicosGeneralesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSituacionLaboralPersonalResponse">
+    <wsdl:part name="getDatosSocioEconomicosSituacionLaboralPersonalResponse" element="tns:getDatosSocioEconomicosSituacionLaboralPersonalResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFormacion">
+    <wsdl:part name="getDatosFormacion" element="tns:getDatosFormacion">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSituacionLaboralPadres">
+    <wsdl:part name="getDatosSocioEconomicosSituacionLaboralPadres" element="tns:getDatosSocioEconomicosSituacionLaboralPadres">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFormacionResponse">
+    <wsdl:part name="getDatosFormacionResponse" element="tns:getDatosFormacionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosCondicionAcademicaResponse">
+    <wsdl:part name="getDatosCondicionAcademicaResponse" element="tns:getDatosCondicionAcademicaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFormacionSecundaria">
+    <wsdl:part name="getDatosFormacionSecundaria" element="tns:getDatosFormacionSecundaria">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosExtranjerosResponse">
+    <wsdl:part name="getDatosExtranjerosResponse" element="tns:getDatosExtranjerosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosFormacionSecundariaResponse">
+    <wsdl:part name="getDatosFormacionSecundariaResponse" element="tns:getDatosFormacionSecundariaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSaludResponse">
+    <wsdl:part name="getDatosSocioEconomicosSaludResponse" element="tns:getDatosSocioEconomicosSaludResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosDomicilio">
+    <wsdl:part name="getDatosDomicilio" element="tns:getDatosDomicilio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSituacionLaboralPersonal">
+    <wsdl:part name="getDatosSocioEconomicosSituacionLaboralPersonal" element="tns:getDatosSocioEconomicosSituacionLaboralPersonal">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosSocioEconomicosSalud">
+    <wsdl:part name="getDatosSocioEconomicosSalud" element="tns:getDatosSocioEconomicosSalud">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatosPrincipales">
+    <wsdl:part name="getDatosPrincipales" element="tns:getDatosPrincipales">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AlumnoService">
+    <wsdl:operation name="getDatosPersonales">
+      <wsdl:input message="tns:getDatosPersonales">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosPersonalesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosPrincipales">
+      <wsdl:input message="tns:getDatosPrincipales">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosPrincipalesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosDomicilio">
+      <wsdl:input message="tns:getDatosDomicilio">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosDomicilioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFamiliares">
+      <wsdl:input message="tns:getDatosFamiliares">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosFamiliaresResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosExtranjeros">
+      <wsdl:input message="tns:getDatosExtranjeros">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosExtranjerosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacion">
+      <wsdl:input message="tns:getDatosFormacion">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosFormacionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacionSecundaria">
+      <wsdl:input message="tns:getDatosFormacionSecundaria">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosFormacionSecundariaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacionSuperior">
+      <wsdl:input message="tns:getDatosFormacionSuperior">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosFormacionSuperiorResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicos">
+      <wsdl:input message="tns:getDatosSocioEconomicos">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosSocioEconomicosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosGenerales">
+      <wsdl:input message="tns:getDatosSocioEconomicosGenerales">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosSocioEconomicosGeneralesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSalud">
+      <wsdl:input message="tns:getDatosSocioEconomicosSalud">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosSocioEconomicosSaludResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSituacionLaboralPadres">
+      <wsdl:input message="tns:getDatosSocioEconomicosSituacionLaboralPadres">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosSocioEconomicosSituacionLaboralPadresResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSituacionLaboralPersonal">
+      <wsdl:input message="tns:getDatosSocioEconomicosSituacionLaboralPersonal">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosSocioEconomicosSituacionLaboralPersonalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosCondicionAcademica">
+      <wsdl:input message="tns:getDatosCondicionAcademica">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatosCondicionAcademicaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AlumnoServiceBinding" type="tns:AlumnoService">
+    <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDatosPersonales">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosPrincipales">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosDomicilio">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFamiliares">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosExtranjeros">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacion">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacionSecundaria">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosFormacionSuperior">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicos">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosGenerales">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSalud">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSituacionLaboralPadres">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosSocioEconomicosSituacionLaboralPersonal">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosCondicionAcademica">
+      <SOAP:operation/>
+      <wsdl:input>
+        <SOAP:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <SOAP:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AlumnoServiceService">
+    <wsdl:port name="AlumnoServicePort" binding="tns:AlumnoServiceBinding">
+      <SOAP:address location="http://guarani-broker-dev.unc.edu.ar:8081/services/AlumnoService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

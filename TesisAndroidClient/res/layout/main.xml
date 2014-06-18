@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/options"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical" 
+        android:gravity="center"
+    	android:background="@color/fondoLabel">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/introduzca_label"
+            android:textAppearance="?android:attr/textAppearanceLarge" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="206dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/fondoImput"
+            android:hint="@string/dni_cuil_hint"
+            android:inputType="number"
+            android:maxLength="8"
+            android:textColor="@color/bordeBoton"
+            android:textColorHint="@color/hintColor" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="213dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@layout/options"
+            android:text="@string/aceptar_button"
+            android:textSize="16dp"
+            android:width="100dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sca="http://www.springframework.org/schema/sca"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/sca http://www.osoa.org/xmlns/sca/1.0/spring-sca.xsd">
+
+
+	<sca:service name="DatosPersonalesService" type="service.api.DatosPersonalesService" target="DatosPersonalesServiceBean" />
+
+	<bean id="DatosPersonalesServiceBean" class="service.lib.DatosPersonalesServiceImpl">
+		<property name="datosPrincipalesService" ref="datosPrincipalesService"/>
+		<property name="datosFamiliaresService" ref="datosFamiliaresService"/>
+		<property name="datosExtranjerosService" ref="datosExtranjerosService"/>
+		<property name="datosSocioEconomicosService" ref="datosSocioEconomicosService"/>
+		<property name="datosFormacionService" ref="datosFormacionService"/>
+		<property name="datosCondicionAcademicaService" ref="datosCondicionAcademicaService"/>
+	</bean>
+
+	<sca:reference name="datosPrincipalesService" type="service.api.DatosPrincipalesService"/>
+	<sca:reference name="datosFamiliaresService" type="service.api.DatosFamiliaresService"/>
+	<sca:reference name="datosExtranjerosService" type="service.api.DatosExtranjerosService"/>
+	<sca:reference name="datosSocioEconomicosService" type="service.api.DatosSocioEconomicosService"/>
+	<sca:reference name="datosFormacionService" type="service.api.DatosFormacionService"/>
+	<sca:reference name="datosCondicionAcademicaService" type="service.api.DatosCondicionAcademicaService"/>
+    
+</beans>

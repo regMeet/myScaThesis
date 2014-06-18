@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fondoLabel">#77000000</color>
+    <color name="hintColor">#FFe1e1e1</color>
+    <color name="fondoImput">#77000000</color>
+    <color name="colorTextoImput">#FF100955</color>
+    <color name="botonAceptar">#FF002e93</color>
+    <color name="bordeBoton">#FFe5e5e5</color>
+</resources>

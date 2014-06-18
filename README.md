@@ -1,4 +1,4 @@
 myScaThesis
 ===========
 
-Implementing a SCA architecture with open source tools for Guaraní 2.
+Implementing a SCA architecture with open source tools for Guarani 2.

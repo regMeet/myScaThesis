@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" 
+	xmlns:datos="http://guarani/sca/datosPersonales" 
+	name="Alumno" 
+	targetNamespace="http://guarani/sca/alumno">
+
+	<service name="AlumnoService" promote="AlumnoServiceComponent/AlumnoService">
+		<interface.java interface="service.api.AlumnoService" />
+		<binding.ws uri="http://localhost:8081/services/AlumnoService" />
+	</service>
+
+	<component name="AlumnoServiceComponent">
+		<implementation.java class="service.lib.AlumnoServiceImpl" />
+
+		<reference name="datosPersonalesService">
+			<binding.ws uri="http://localhost:8082/services/DatosPersonalesService" />
+		</reference>
+
+		<service name="AlumnoService">
+			<interface.java interface="service.api.AlumnoService" />
+		</service>
+	</component>
+
+</composite>

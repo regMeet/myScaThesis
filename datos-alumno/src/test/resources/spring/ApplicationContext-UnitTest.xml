@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="datosPersonalesDomain" class="server.DatosPersonalesDomain"/>
+
+	<bean id="datosPrincipalesService" class="server.DatosPrincipalesServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+
+	<bean id="datosExtranjerosService" class="server.DatosExtranjerosServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+
+	<bean id="datosSocioEconomicosService" class="server.DatosSocioEconomicosServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+
+	<bean id="datosFamiliaresService" class="server.DatosFamiliaresServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+
+	<bean id="datosFormacionService" class="server.DatosFormacionServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+	
+	<bean id="datosPersonalesService" class="server.DatosPersonalesServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+	
+	<bean id="datosCondicionAcademicaService" class="server.DatosCondicionAcademicaServiceFactoryBean">
+		<constructor-arg index="0" ref="datosPersonalesDomain" />
+	</bean>
+
+</beans>

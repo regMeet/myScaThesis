@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">Consumidor Guarani Web Service</string>
+    <string name="introduzca_label">Introduzca DNI</string>
+    <string name="dni_cuil_hint">
+</string>
+    <string name="aceptar_button"><b>Aceptar</b></string>
+    <string name="ver_datos_principales">Datos Principales</string>
+    <string name="ver_datos_padres">Datos de los Padres</string>
+    <string name="ver_datos_extranjeros">Datos Extranjeros</string>
+    <string name="ver_datos_socioeconomicos">Datos SocioEconomicos</string>
+    <string name="ver_datos_familiares">Datos Familiares</string>
+    <string name="ver_datos_formacion">Datos Formacion</string>
+    <string name="ver_datos_condicion">Condicion Academica</string>
+    <string name="sample_simple_list_selected">Selected: </string>
+    <string name="domicilio_calle">Calle: </string>
+    <string name="ver_datos_domicilio">Datos del Domicilio</string>
+    <string name="titulo_domicilio">Datos Domicilio</string>
+    <string name="configuracion">Configuración
+</string>
+    <string name="ipString">Introduzca la dirección IP</string>
+</resources>

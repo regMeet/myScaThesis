@@ -1,0 +1,69 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tesis</groupId>
+		<artifactId>guarani</artifactId>
+		<version>1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+    <groupId>tesis</groupId>
+    <artifactId>guaraniBD</artifactId>
+    <version>1.0</version>
+	<packaging>jar</packaging>
+
+    <name>GuaraniBD - Contiene todos los datos </name>
+
+	<dependencies>
+		<!-- Spring -->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-beans</artifactId>
+		  <version>2.5.5</version>
+		</dependency>
+		
+		<dependency>  
+			<groupId>org.springframework</groupId>  
+			<artifactId>spring-context</artifactId>  
+			<version>2.5.5</version>  
+		</dependency> 
+		
+		<!-- Unit Tests -->
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+		
+		<!--
+		mvn install:install-file -Dfile=ifxjdbc.jar \
+                                     -DgroupId=com.informix \
+                                     -DartifactId=ifxjdbc \
+                                     -Dversion=3.50 \
+                                     -Dpackaging=jar
+		-->
+		<dependency>
+			<groupId>com.informix</groupId>
+			<artifactId>ifxjdbc</artifactId>
+			<version>3.50</version>
+		</dependency>
+		
+    </dependencies>
+
+    <build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <optimize>false</optimize>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

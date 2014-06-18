@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="datosPrincipalesDAO" class="guarani.DAO.datosAlumno.DatosPrincipalesDAO" />
+
+	<bean id="datosFamiliaresDAO" class="guarani.DAO.datosAlumno.DatosFamiliaresDAO" />
+
+	<bean id="datosExtranjerosDAO" class="guarani.DAO.datosAlumno.DatosExtranjerosDAO" />
+
+	<bean id="datosFormacionDAO" class="guarani.DAO.datosAlumno.DatosFormacionDAO" />
+
+	<bean id="datosSocioEconomicosDAO" class="guarani.DAO.datosAlumno.DatosSocioEconomicosDAO" />
+
+	<bean id="datosCondicionAcademicaDAO" class="guarani.DAO.datosAlumno.DatosCondicionAcademicaDAO" />
+
+</beans>

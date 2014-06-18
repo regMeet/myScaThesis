@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+<h:head>
+
+</h:head>
+<body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="title">RichFaces Sample</ui:define>
+		<ui:define name="body">
+			<h:form prependId="false">
+				<center>
+
+					<rich:panel style="width:1000px;padding-bottom:20px;border:none; ">
+						<f:facet name="header">
+				        	Instituto Universitario Aeronautico - Facultad de Ingenieria
+				        	</f:facet>
+						<rich:panel style="border:none;">
+							<h:graphicImage value="images/logo.png" />
+						</rich:panel>
+
+						<rich:panel id="loginPanel" rendered="#{not richBean.logged}"
+							style="border:none;">
+							<h:outputLabel value="DNI: " for="nameInput" />
+							<h:inputText id="nameInput" value="#{richBean.dni}" />
+							<h:commandButton id="login" value="Login"
+								action="#{richBean.login}" reRender="menu">
+							</h:commandButton>
+						</rich:panel>
+
+						<rich:panel style="border:none;" rendered="#{richBean.invalid}">
+							<h:outputLabel style="color:red; font-weight:bold;"
+								value="El alumno con DNI #{richBean.dni} no se encuentra en nuestra base de datos por favor ingrese un DNI valido." />
+						</rich:panel>
+
+						<h:commandButton id="LogOut" value="Log out"
+							style="float:right;margin-right:108px;"
+							rendered="#{richBean.logged}" action="#{richBean.logOut}"
+							reRender="menu,loginPanel">
+						</h:commandButton>
+
+						<rich:tabPanel id="menu" switchType="ajax"
+							style="width:768px;padding-bottom:50px;padding-top:50px;font-size:7;font-weight:bold;"
+							rendered="#{richBean.logged}">
+							<rich:tab header="Datos Principales">
+								<h:panelGroup id="principales" style="text-align:left;">
+									<ul>
+										<li><h:outputText
+												value="Apellido: #{richBean.datosPrincipales.apellido}" />
+										</li>
+										<li><h:outputText
+												value="Nombre: #{richBean.datosPrincipales.nombre}" /></li>
+										<li><h:outputText
+												value="DNI: #{richBean.datosPrincipales.dni}" /></li>
+										<li><h:outputText
+												value="Cuil: #{richBean.datosPrincipales.cuil}" /></li>
+										<li><h:outputText
+												value="Email: #{richBean.datosPrincipales.email}" /></li>
+										<li><h:outputText
+												value="Nacimiento: #{richBean.datosPrincipales.fechaDeNacimiento}" />
+										</li>
+										<li><h:outputText
+												value="Genero: #{richBean.datosPrincipales.genero}" /></li>
+										<li><h:outputText
+												value="Nacionalidad: #{richBean.datosPrincipales.nacionalidad}" />
+										</li>
+										<li><h:outputText
+												value="Telefono: #{richBean.datosPrincipales.telefonoFijo}" />
+										</li>
+										<li><h:outputText
+												value="Celular: #{richBean.datosPrincipales.telefonoMovil}" />
+										</li>
+									</ul>
+								</h:panelGroup>
+							</rich:tab>
+							<rich:tab header="Datos Familiares">
+								<h:panelGroup id="familiares" style="text-align:left;">
+									<ul>
+										<li><h:outputText
+												value="Cantidad de Hijos: #{richBean.datosFamiliares.cantidadDeHijos}" />
+										</li>
+										<li><h:outputText
+												value="Cantidad de Hijos a Cargo #{richBean.datosFamiliares.cantidadDeHijosACargo}" />
+										</li>
+										<li><h:outputText
+												value="Vive con: #{richBean.datosFamiliares.conQuienVive}" /></li>
+										<li><h:outputText
+												value="Estado Civil: #{richBean.datosFamiliares.estadoCivil}" /></li>
+									</ul>
+								</h:panelGroup>
+							</rich:tab>
+							<rich:tab header="Condición Academica">
+								<h:panelGroup id="condicion" style="text-align:left;">
+									<rich:list var="carrera"
+										value="#{richBean.condicionAcademica.carreras}" rows="10">
+										<h:outputText value="Carrera: #{carrera.nombreCarrera}"
+											style="float:left;" />
+											<br></br>
+											<h:outputText value="- Codigo de carrera: #{carrera.codigoCarrera}" />
+											<br></br>
+											<h:outputText value="- Es egresado: #{carrera.egresado}" />
+											<br></br>
+											<h:outputText value="- Fecha de ultimo examen: #{carrera.fechaUltimoExamen}" />
+											<br></br>
+											<h:outputText value="- Ultima reinscripcion: #{carrera.ultimaReincripcion}" />
+											<br></br>
+											<br></br>
+										<br></br>
+									</rich:list>
+								</h:panelGroup>
+							</rich:tab>
+							<rich:tab header="Domicilio">
+								<h:panelGroup id="domicilio" style="text-align:left;">
+									<ul>
+										<li><h:outputText
+												value="Calle: #{richBean.domicilio.calle}" /></li>
+										<li><h:outputText
+												value="Número: #{richBean.domicilio.numero}" /></li>
+										<li><h:outputText
+												value="Departamento: #{richBean.domicilio.departamento}" /></li>
+										<li><h:outputText
+												value="Edificio: #{richBean.domicilio.edificio}" /></li>
+										<li><h:outputText
+												value="Piso: #{richBean.domicilio.piso}" /></li>
+										<li><h:outputText
+												value="Localidad: #{richBean.domicilio.localidad}" /></li>
+										<li><h:outputText
+												value="Codigo Postal: #{richBean.domicilio.codigoPostal}" />
+										</li>
+									</ul>
+								</h:panelGroup>
+							</rich:tab>
+							<rich:tab header="Formación">
+								<h:panelGroup id="formacion" style="text-align:left;">
+									<h:outputText style="float:left;" value="Formación Secundaria" />
+									<br></br>
+									<ul>
+										<li><h:outputText
+												value="Año de egreso: #{richBean.formacion.datosFormacionSecundaria.anioEgresoSecundario}" />
+										</li>
+										<li><h:outputText
+												value="Codigo de colegio: #{richBean.formacion.datosFormacionSecundaria.codigoColegioSecundario}" />
+										</li>
+										<li><h:outputText
+												value="Codigo titulo: #{richBean.formacion.datosFormacionSecundaria.codigoTituloSecundario}" /></li>
+										<li><h:outputText
+												value="Nombre colegio: #{richBean.formacion.datosFormacionSecundaria.nombreColegioSecundario}" /></li>
+										<li><h:outputText
+												value="Titulo: #{richBean.formacion.datosFormacionSecundaria.nombreTituloSecundario}" /></li>
+										<li><h:outputText
+												value="Orientación Vocacional: #{richBean.formacion.datosFormacionSecundaria.orientacionVocacionalRecibida}" />
+										</li>
+									</ul>
+									
+									<h:outputText style="float:left;" value="Formación Superior" />
+									<br></br>
+									<ul>
+										<li><h:outputText
+												value="Area: #{richBean.formacion.datosFormacionSuperior.area}" />
+										</li>
+										<li><h:outputText
+												value="Carrera: #{richBean.formacion.datosFormacionSuperior.carrera}" />
+										</li>
+										<li><h:outputText
+												value="Egreso: #{richBean.formacion.datosFormacionSuperior.anioEgreso}" /></li>
+										<li><h:outputText
+												value="Establecimiento: #{richBean.formacion.datosFormacionSuperior.establecimiento}" /></li>
+										<li><h:outputText
+												value="Nivel: #{richBean.formacion.datosFormacionSuperior.nivel}" /></li>
+										<li><h:outputText
+												value="Tipo: #{richBean.formacion.datosFormacionSuperior.tipo}" />
+										</li>
+									</ul>
+									<h:outputText style="float:left;" value="Idiomas" />
+									<br></br>
+									<rich:list var="idioma" value="#{richBean.formacion.idiomas}"
+										rows="10">
+										<h:outputText value="#{idioma}" />
+										<br></br>
+									</rich:list>
+
+								</h:panelGroup>
+							</rich:tab>
+							<rich:tab header="Datos Socioeconomicos">
+								<h:panelGroup id="socioEconomicos" style="text-align:left;">
+
+									<rich:tabPanel id="socioeconomicotabs" switchType="ajax"
+										style="width:747px;padding-bottom:5px;padding-top:5px;font-size:7;font-weight:bold;float:center;">
+
+										<rich:tab header="Datos Generales">
+											<br></br>
+											<h:outputText style="float:left;"
+												value="¿Tiene acceso a internet?" />
+											<br></br>
+											<rich:list var="acceso"
+												value="#{richBean.socioEconomico.datosSocioEconomicosGenerales.accesoInternet}"
+												rows="10">
+												<h:outputText value="#{acceso}" />
+												<br></br>
+											</rich:list>
+
+											<h:outputText style="float:left;"
+												value="¿Disponibilidad de PC?" />
+											<br></br>
+											<rich:list var="disponibilidad"
+												value="#{richBean.socioEconomico.datosSocioEconomicosGenerales.disponibilidadPC}"
+												rows="10">
+												<h:outputText value="#{disponibilidad}" />
+											</rich:list>
+
+											<h:outputText style="float:left;"
+												value="¿Con que regularidad tiene acceso a internet?   #{richBean.socioEconomico.datosSocioEconomicosGenerales.regularidadAccesoInternet}" />
+											<br></br>
+											<br></br>
+
+											<h:outputText style="float:left;"
+												value="¿Disponibilidad de PC?" />
+											<br></br>
+											<rich:list var="utiliza"
+												value="#{richBean.socioEconomico.datosSocioEconomicosGenerales.usoInternet}"
+												rows="10">
+												<h:outputText value="#{utiliza}" />
+											</rich:list>
+											<br></br>
+										</rich:tab>
+
+										<rich:tab header="Salud">
+											<br></br>
+											<h:outputText style="float:left;" value="Cobertura de salud:" />
+											<h:outputText style="float:left;color:black;"
+												value=" #{richBean.socioEconomico.datosSocioEconomicosSalud.coberturaDeSalud}" />
+											<br></br>
+											<br></br>
+											<h:outputText style="float:left;"
+												value="¿Practica deportes? " />&nbsp;
+											<h:outputText style="float:left;color:black;"
+												value=" #{richBean.practicaDeporte}" />
+											<br></br>
+											<br></br>
+											<h:outputText style="float:left;"
+												value="Deportes que practica" />
+											<br></br>
+											<rich:list var="deporte"
+												value="#{richBean.socioEconomico.datosSocioEconomicosSalud.deportes}"
+												rows="10">
+												<h:outputText value="#{deporte}" />
+												<br></br>
+											</rich:list>
+											<h:outputText style="float:left;" value="Lugares de practica" />
+											<br></br>
+											<rich:list var="lugares"
+												value="#{richBean.socioEconomico.datosSocioEconomicosSalud.lugaresPractica}"
+												rows="10">
+												<h:outputText value="#{lugares}" />
+												<br></br>
+											</rich:list>
+										</rich:tab>
+									</rich:tabPanel>
+								</h:panelGroup>
+
+							</rich:tab>
+							<rich:tab header="Situacion laboral">
+								<h:panelGroup id="sitLaboral" style="text-align:left;">
+									<h:outputText style="float:left;"
+										value="Situacion laboral Personal" />
+									<br></br>
+									<ul>
+										<li><h:outputText
+												value="Empresa familiar: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.empresaFamiliar}" /></li>
+										<li><h:outputText
+												value="Horas semanales: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.horasSemanales}" /></li>
+										<li><h:outputText
+												value="Remuneración: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.remuneracion}" /></li>
+										<li><h:outputText
+												value="Tareas que realiza: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.tareaQueRealiza}" /></li>
+										<li><h:outputText
+												value="Trabajo que realiza: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.trabajoQueHaceElAlumno}" /></li>
+										<li><h:outputText
+												value="Categoria Ocupacional: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.datosDeTrabajo.categoriaOcupacional}" />
+										</li>
+										<li><h:outputText
+												value="Detalle de la rama de la actividad economica: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.datosDeTrabajo.detalleRamaActividadEconomica}" /></li>
+										<li><h:outputText
+												value="Situacion Laboral: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPersonal.datosDeTrabajo.situacionLaboral}" /></li>
+									</ul>
+									<br></br>
+									<h:outputText style="float:left;"
+										value="Situacion laboral de la Madre" />
+									<br></br>
+									<ul>
+										<li><h:outputText
+												value="Nivel de estudios: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.nivelDeEstudiosMadre}" /></li>
+										<li><h:outputText
+												value="¿Vive?: #{richBean.viveLaMadre}" /></li>
+										<li><h:outputText
+												value="Actividad Economica: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoMadre.actividadEconomica}" />
+										</li>
+										<li><h:outputText
+												value="Categoria Ocupacional: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoMadre.categoriaOcupacional}" />
+										</li>
+										<li><h:outputText
+												value="Detalle de la rama de la actividad economica: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoMadre.detalleRamaActividadEconomica}" /></li>
+										<li><h:outputText
+												value="Situacion Laboral: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoMadre.situacionLaboral}" /></li>
+									</ul>
+									<br></br>
+									<h:outputText style="float:left;"
+										value="Situacion laboral del Padre" />
+									<br></br>
+									<ul>
+										<li><h:outputText
+												value="Nivel de estudios: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.nivelDeEstudiosPadre}" /></li>
+										<li><h:outputText
+												value="¿Vive?: #{richBean.viveElPadre}" /></li>
+										<li><h:outputText
+												value="Actividad Economica: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoPadre.actividadEconomica}" />
+										</li>
+										<li><h:outputText
+												value="Categoria Ocupacional: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoPadre.categoriaOcupacional}" />
+										</li>
+										<li><h:outputText
+												value="Detalle de la rama de la actividad economica: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoPadre.detalleRamaActividadEconomica}" /></li>
+										<li><h:outputText
+												value="Situacion Laboral: #{richBean.socioEconomico.datosSocioEconomicosSituacionLaboralPadres.datosDeTrabajoPadre.situacionLaboral}" /></li>
+									</ul>
+								</h:panelGroup>
+							</rich:tab>
+						</rich:tabPanel>
+
+					</rich:panel>
+					<rich:panel
+						style="width:1000px;border:none;background-color:white;">
+						<f:facet name="header">
+				        	Canevaro Javier Andres - Albertengo Alan Miguel - 2012
+				        	</f:facet>
+
+					</rich:panel>
+				</center>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
